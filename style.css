@@ -1,3 +1,4 @@
+/*reset le CSS pour tous les navigateurs*/
 * { 
 margin : 0;
 padding: 0;
@@ -7,24 +8,32 @@ font: inherit;
 height: 100%;
 width: 100%;
 }
-/*reset le CSS pour tous les navigateurs*/
+
+
+
 .box {
     display: grid;
-    grid-template-columns: 1fr 440px 1fr;
-    grid-template-rows: 1fr 440px 1fr;
+    /* centrer la box dans le body grid */
+    grid-template-columns: 1fr 25px 440px 25px 1fr;
+    grid-template-rows: 1fr 25px 440px 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    grid-template-areas:
+    ". . . ."
+    ". . lettre ."
+    ". num board . "
+    ". . . .";
     }
     
-    
+
+
 .board {
     border: 15px solid #3d3d3d;
-    /* centrer la box dasn le body grid */
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: board;
     /* new grid pour la grille de jeu */
     display: grid;
-    grid-template-columns: repeat(8, 55px);
-    grid-template-rows: repeat(8, 55px);
+    grid-template-columns: repeat(8,55px);
+    grid-template-rows:  repeat(8,55px);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
@@ -37,8 +46,59 @@ width: 100%;
     "G1 G2 G3 G4 G5 G6 G7 G8"
     "H1 H2 H3 H4 H5 H6 H7 H8";
     font-size:40px;
-    text-align:center;
 }
+
+.num {
+    display: grid;
+    grid-area: num;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8,55px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+    "num1"
+    "num2"
+    "num3"
+    "num4"
+    "num5"
+    "num6"
+    "num7"
+    "num8";
+    margin-top: 15px;
+    text-align: center;
+}
+
+.num1 { grid-area: num1; }
+.num2 { grid-area: num2; }
+.num3 { grid-area: num3; }
+.num4 { grid-area: num4; }
+.num5 { grid-area: num5; }
+.num6 { grid-area: num6; }
+.num7 { grid-area: num7; }
+.num8 { grid-area: num8; }
+
+.lettre {
+    grid-area: lettre;
+    display: grid;
+    grid-template-columns: repeat(8,55px);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+    "lettreH lettreG lettreF lettreE lettreD lettreC lettreB lettreA";
+    text-align: center;
+    margin-left: 15px;
+}
+
+.lettreA { grid-area: lettreA; }
+.lettreB { grid-area: lettreB; }
+.lettreC { grid-area: lettreC; }
+.lettreD { grid-area: lettreD; }
+.lettreE { grid-area: lettreE; }
+.lettreF { grid-area: lettreF; }
+.lettreG { grid-area: lettreG; }
+.lettreH { grid-area: lettreH; } 
+
 .A1 { grid-area: A1; }
 .A2 { grid-area: A2; }
 .A3 { grid-area: A3; }
@@ -48,7 +108,7 @@ width: 100%;
 .A7 { grid-area: A7; }
 .A8 { grid-area: A8; }
 .B1 { grid-area: B1; }
-.Bé { grid-area: Bé; }
+.B2 { grid-area: B2; }
 .B3 { grid-area: B3; }
 .B4 { grid-area: B4; }
 .B5 { grid-area: B5; }
@@ -103,19 +163,22 @@ width: 100%;
 .H6 { grid-area: H6; }
 .H7 { grid-area: H7; }
 .H8 { grid-area: H8; }
-   
-    .background {
-        background-image: /* tint image */
-        linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-        /* checkered effect */
-        linear-gradient(to left, black 50%, white 50%),
-        linear-gradient(to bottom, black 50%, white 50%);
-        background-blend-mode: normal, difference, normal;
-        background-size: 110px 110px;
-    }
-img {
-    image-rendering: crisp-edges;
-    height: 50px;
-    width: 50px;
+
+.background {
+    background-image: /* tint image */
+    linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    /* checkered effect */
+    linear-gradient(to left, black 50%, white 50%),
+    linear-gradient(to bottom, black 50%, white 50%);
+    background-blend-mode: normal, difference, normal;
+    background-size: 110px 110px;
 }
-    
+img {
+    image-rendering: crisp-edges; /*valeur pour le pixel art - empeche l'ajout de contour et de flou */
+    height: 55px;
+    width: 55px;
+}
+
+
+
+
