@@ -113,4 +113,9 @@ width: 100%;
         background-blend-mode: normal, difference, normal;
         background-size: 110px 110px;
     }
+img {
+    image-rendering: crisp-edges;
+    height: 50px;
+    width: 50px;
+}
     
