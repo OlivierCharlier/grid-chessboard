@@ -1,0 +1,10 @@
+* { 
+margin : 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+height: 100%;
+width: 100%;
+}
+/*reset le CSS pour tous les navigateurs*/
