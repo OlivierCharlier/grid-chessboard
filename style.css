@@ -14,7 +14,7 @@ width: 100%;
 .box {
     display: grid;
     /* centrer la box dans le body grid */
-    grid-template-columns: 1fr 25px 440px 25px 1fr;
+    grid-template-columns: 1fr 25px 440px 1fr;
     grid-template-rows: 1fr 25px 440px 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -33,7 +33,7 @@ width: 100%;
     /* new grid pour la grille de jeu */
     display: grid;
     grid-template-columns: repeat(8,55px);
-    grid-template-rows:  repeat(8,55px);
+    grid-template-rows: repeat(8,55px);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
